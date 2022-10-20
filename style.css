@@ -1,4 +1,12 @@
-body
-{
 
-}
+
+.footer{
+
+    position: fixed;
+    color: red;
+    background-color: antiquewhite;
+    bottom:0;
+    width: 100%;
+    text-align: center;
+    line-height: 3;
+    }

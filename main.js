@@ -1,5 +1,14 @@
 
+
+
+
 /*created by vsp */
+
+
+var rwx="";
+var rwy="";
+
+score
 
 var paddle2 =10,paddle1=10;
 
@@ -32,6 +41,27 @@ function setup(){
     poseNet=ml5.poseNet(video,modelLoaded);
     poseNet.on('pose', gotPoses);
   }
+
+  function gotPoses(results){
+
+
+
+    if(results.length>0){
+    
+    
+      console.log(results);
+    
+      rwx=results[0].pose.rightWrist.x;
+      
+      rwy=results[0].pose.rightWrist.y;
+    
+    
+    }
+    
+    
+    
+    }
+    
 
   function modelLoaded(){
   
@@ -82,6 +112,20 @@ function draw(){
    
    //function move call which in very important
     move();
+
+
+    if (score>0.2) {
+
+
+      fill("red");
+      stroke("black");
+      circle(rwx,rwy,10);
+
+      
+    }
+    
+
+
 }
 
 
